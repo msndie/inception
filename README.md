@@ -13,3 +13,6 @@ https://medium.com/swlh/wordpress-deployment-with-nginx-php-fpm-and-mariadb-usin
 https://faun.pub/setting-up-ssl-certificates-for-nginx-in-docker-environ-e7eec5ebb418
 
 https://geekjob.medium.com/%D0%BF%D0%BE%D0%B4%D0%BD%D1%8F%D1%82%D1%8C-nginx-%D1%81-http2-f96a740caec7
+
+https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose-ru
+
