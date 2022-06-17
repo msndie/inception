@@ -16,3 +16,5 @@ https://geekjob.medium.com/%D0%BF%D0%BE%D0%B4%D0%BD%D1%8F%D1%82%D1%8C-nginx-%D1%
 
 https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose-ru
 
+https://upcloud.com/resources/tutorials/wordpress-with-docker
+
