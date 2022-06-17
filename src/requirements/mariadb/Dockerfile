@@ -1,4 +1,5 @@
-FROM debian:buster
-RUN apt-get update -y && apt-get upgrade -y
-RUN apt-get install mariadb-server -y
-CMD ["service", "mysql", "start"]
+FROM alpine:3.15
+RUN apk update
+RUN apk add mysql mysql-client
+# RUN chown -R mariadb /var/lib/mysql
+CMD ["mariadb"]
