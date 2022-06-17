@@ -1,6 +1,6 @@
-FROM alpine:3.15
-RUN apk update
-RUN apk add --no-cache openssl nginx
+FROM debian:buster
+RUN apt update -y
+RUN apt install openssl nginx -y
 # RUN wget https://nginx.org/download/nginx-1.22.0.tar.gz
 # RUN tar xzvf nginx-1.22.0.tar.gz
 # RUN cd nginx-1.22.0 && ./configure --prefix=/etc/nginx --with-http_ssl_module

@@ -42,14 +42,14 @@ volumes:
         driver_opts:
             type: none
             o: bind
-            device: /Users/sclam/db_data
+            device: /home/sclam/db_data
     wordpress_data:
         name: wordpress_data
         driver: local
         driver_opts:
             type: none
             o: bind
-            device: /Users/sclam/wordpress_data
+            device: /home/sclam/wordpress_data
 networks:
     app-network:
         driver: bridge
