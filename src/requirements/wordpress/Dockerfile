@@ -20,6 +20,7 @@ RUN echo "listen = 9000" >> /etc/php/7.3/fpm/pool.d/www.conf
 # RUN echo "access.log = /var/log/$pool.access.log" >> /etc/php/7.3/fpm/pool.d/www.conf
 RUN chown -R  www-data:www-data /var/www/wordpress/
 RUN chmod 777 /var/www/wordpress/
+# COPY wp-config.php /var/www/wordpress/wp-config.php
 EXPOSE 9000
 # RUN echo "<?php phpinfo();?>" >  /var/www/html/index.php
 CMD ["sh", "/start.sh"]
