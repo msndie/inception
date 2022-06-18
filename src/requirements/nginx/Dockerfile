@@ -17,4 +17,6 @@ RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 1024 -nodes \
 # COPY conf/nginx.conf /etc/nginx/conf/nginx.conf
 RUN rm /etc/nginx/nginx.conf
 COPY conf/nginx.conf /etc/nginx/nginx.conf
+RUN chown -R www-data:www-data /var/www/
+EXPOSE 443 
 CMD ["nginx", "-g", "daemon off;"]
