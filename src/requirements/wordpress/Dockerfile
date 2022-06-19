@@ -1,7 +1,7 @@
 FROM debian:buster
 
 RUN apt update -y
-RUN apt install php-fpm php php-mysql wget mariadb-client -y
+RUN apt install php-fpm php php-mysql wget mariadb-client sendmail -y
 
 RUN mkdir /run/php
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
