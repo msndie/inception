@@ -21,7 +21,7 @@ services:
         # volumes:
         #     - wordpress_data:/var/www
         volumes:
-            - /Users/sclam/wordpress_db:/var/www
+            - /Users/sclam/wordpress_data:/var/www
         depends_on:
             - wordpress
         networks:
@@ -36,7 +36,7 @@ services:
         # volumes:
         #     - wordpress_data:/var/www
         volumes:
-            - /Users/sclam/wordpress_db:/var/www
+            - /Users/sclam/wordpress_data:/var/www
         networks:
             - app-network
         depends_on:
