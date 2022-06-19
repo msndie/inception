@@ -9,7 +9,7 @@ services:
         # volumes:
         #     - db_data:/var/lib/mysql
         volumes:
-            - /Users/sclam/db_data:/var/lib/mysql
+            - /home/sclam/data/db_data:/var/lib/mysql
         networks:
             - app-network
     nginx:
@@ -21,7 +21,7 @@ services:
         # volumes:
         #     - wordpress_data:/var/www
         volumes:
-            - /Users/sclam/wordpress_data:/var/www
+            - /home/sclam/data/wordpress_data:/var/www
         depends_on:
             - wordpress
         networks:
@@ -36,7 +36,7 @@ services:
         # volumes:
         #     - wordpress_data:/var/www
         volumes:
-            - /Users/sclam/wordpress_data:/var/www
+            - /home/sclam/data/wordpress_data:/var/www
         networks:
             - app-network
         depends_on:
@@ -48,14 +48,14 @@ services:
 #         driver_opts:
 #             type: none
 #             o: bind
-#             device: /Users/sclam/db_data
+#             device: /home/sclam/data/db_data
 #     wordpress_data:
 #         name: wordpress_data
 #         driver: local
 #         driver_opts:
 #             type: none
 #             o: bind
-#             device: /Users/sclam/wordpress_data
+#             device: /home/sclam/data/wordpress_data
 networks:
     app-network:
         driver: bridge
