@@ -11,13 +11,11 @@
 #
 #========================================================================================
 
-all: up_detached
+all: up
 
 up:
-		docker-compose -f srcs/docker-compose.yml up --build;
-
-up_detached:
 		docker-compose -f srcs/docker-compose.yml up --build -d;
+		docker-compose -f srcs/docker-compose.yml logs -f;
 
 down:
 		docker-compose -f srcs/docker-compose.yml down;
@@ -26,4 +24,4 @@ clean:
 		sudo rm -rf /home/sclam/data/*;
 		docker system prune -a;
 
-.PHONY: all up up_detached down clean
+.PHONY: all up down clean

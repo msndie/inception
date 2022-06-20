@@ -11,6 +11,4 @@ COPY tools/start.sh /start.sh
 RUN chown -R  www-data:www-data /var/lib/mysql/
 RUN chmod 777 /var/lib/mysql/
 
-EXPOSE 3306
-
 ENTRYPOINT ["sh", "/start.sh"]

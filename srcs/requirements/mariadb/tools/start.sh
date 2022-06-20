@@ -4,7 +4,7 @@ if [ ! -d "/var/lib/mysql/$MYSQL_DATABASE" ]; then
 	echo "---------------------START---------------------"
 	service mysql start
 	echo "---------------------CREATE DB---------------------"
-	mysql -u root -e "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE CHARACTER SET utf8 COLLATE utf8_general_ci;"
+	mysql -u root -e "CREATE DATABASE $MYSQL_DATABASE CHARACTER SET utf8 COLLATE utf8_general_ci;"
 	echo "---------------------CREATE USER---------------------"
 	mysql -u root -e "CREATE USER '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';"
 	echo "---------------------GRANT PRIVILEGES---------------------"

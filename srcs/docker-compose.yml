@@ -4,12 +4,12 @@ services:
         container_name: mariadb
         restart: always
         env_file: .env
-        # ports:
-        #     - "3306:3306"
+        ports:
+            - ":3306"
         volumes:
             - /home/sclam/data/db_data:/var/lib/mysql
         networks:
-            - app-network
+            - back
     nginx:
         build: requirements/nginx
         container_name: nginx
@@ -21,20 +21,23 @@ services:
         depends_on:
             - wordpress
         networks:
-            - app-network
+            - front
     wordpress:
         build: requirements/wordpress
         container_name: wordpress
         restart: always
         env_file: .env
-        # ports:
-        #     - "9000:9000"
+        ports:
+            - ":9000"
         volumes:
             - /home/sclam/data/wordpress_data:/var/www
         networks:
-            - app-network
+            - front
+            - back
         depends_on:
             - mariadb
 networks:
-    app-network:
+    front:
+        driver: bridge
+    back:
         driver: bridge

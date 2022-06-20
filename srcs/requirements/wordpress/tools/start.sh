@@ -10,5 +10,7 @@ if ! [ -f "/var/www/wordpress/wp-config.php" ]; then
 	echo "---------------------DUMMY USER---------------------"
 	wp user create dummy dummy@dummy.com --user_pass=dummy_pass --role=subscriber --allow-root --path=/var/www/wordpress
 	echo "---------------------DONE---------------------"
+	echo "define('FS_METHOD','direct');" >> /var/www/wordpress/wp-config.php
+	chmod -R 777 /var/www/wordpress/*
 fi
 php-fpm7.3 -F
