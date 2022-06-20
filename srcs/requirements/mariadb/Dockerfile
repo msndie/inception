@@ -3,13 +3,10 @@ FROM debian:buster
 RUN apt update -y
 RUN apt install mariadb-server procps -y
 
-# RUN sed -i 's/#bind-address/#&/' /etc/mysql/mariadb.conf.d/50-server.cnf
-# RUN sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
-
 RUN rm /etc/mysql/mariadb.conf.d/50-server.cnf
 
-COPY 50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
-COPY start.sh /start.sh
+COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+COPY tools/start.sh /start.sh
 
 RUN chown -R  www-data:www-data /var/lib/mysql/
 RUN chmod 777 /var/lib/mysql/

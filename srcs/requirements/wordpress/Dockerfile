@@ -9,7 +9,7 @@ RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 RUN mkdir -p /var/www/wordpress
 
-COPY start.sh /start.sh
+COPY tools/start.sh /start.sh
 RUN chmod +x /start.sh
 
 RUN echo "listen = 9000" >> /etc/php/7.3/fpm/pool.d/www.conf

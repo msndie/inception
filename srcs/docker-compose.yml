@@ -4,10 +4,8 @@ services:
         container_name: mariadb
         restart: always
         env_file: .env
-        ports:
-            - "3306:3306"
-        # volumes:
-        #     - db_data:/var/lib/mysql
+        # ports:
+        #     - "3306:3306"
         volumes:
             - /home/sclam/data/db_data:/var/lib/mysql
         networks:
@@ -18,8 +16,6 @@ services:
         restart: always
         ports:
             - "443:443"
-        # volumes:
-        #     - wordpress_data:/var/www
         volumes:
             - /home/sclam/data/wordpress_data:/var/www
         depends_on:
@@ -31,31 +27,14 @@ services:
         container_name: wordpress
         restart: always
         env_file: .env
-        ports:
-            - "9000:9000"
-        # volumes:
-        #     - wordpress_data:/var/www
+        # ports:
+        #     - "9000:9000"
         volumes:
             - /home/sclam/data/wordpress_data:/var/www
         networks:
             - app-network
         depends_on:
             - mariadb
-# volumes:
-#     db_data:
-#         name: db_data
-#         driver: local
-#         driver_opts:
-#             type: none
-#             o: bind
-#             device: /home/sclam/data/db_data
-#     wordpress_data:
-#         name: wordpress_data
-#         driver: local
-#         driver_opts:
-#             type: none
-#             o: bind
-#             device: /home/sclam/data/wordpress_data
 networks:
     app-network:
         driver: bridge

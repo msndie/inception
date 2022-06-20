@@ -9,10 +9,6 @@ RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 1024 -nodes \
         -keyout /etc/nginx/ssl/sclam.42.fr.key \
         -subj "/C=RU/CN=sclam.42.fr/"
 
-# RUN rm /etc/nginx/conf/nginx.conf
-# RUN rm /etc/nginx/conf/nginx.conf.default
-# COPY conf/nginx.conf /etc/nginx/conf/nginx.conf
-
 RUN rm /etc/nginx/nginx.conf
 RUN chown -R www-data:www-data /var/www/
 
